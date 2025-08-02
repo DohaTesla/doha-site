@@ -25,19 +25,18 @@
       background-size: cover;
       background-position: center;
       height: 100vh;
-      position: relative;
     }
 
-.intro {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  text-align: center;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-  z-index: 10;
-}
+    section {
+      padding: 80px 20px;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    .intro {
+      text-align: center;
+      margin-top: 40px;
+    }
 
     .intro h1 {
       font-size: 3.2em;
@@ -46,13 +45,9 @@
 
     .intro p {
       font-size: 1.2em;
+      line-height: 1.5em;
+      color: #444;
       margin: 0.3em 0;
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 960px;
-      margin: auto;
     }
 
     section h2 {
@@ -120,13 +115,13 @@
 </head>
 <body>
 
-  <header>
-    <div class="intro">
-      <h1>DohaTeslaLab</h1>
-      <p>Biological Intelligence: Engineered</p>
-      <p>— Resonance · Memory · Evolution</p>
-    </div>
-  </header>
+  <header></header>
+
+  <section class="intro" data-aos="fade-up">
+    <h1>DohaTeslaLab</h1>
+    <p>Biological Intelligence: Engineered</p>
+    <p>— Resonance · Memory · Evolution</p>
+  </section>
 
   <section class="about" data-aos="fade-up">
     <img src="images/profile.jpg" alt="Doha Lee portrait"/>
@@ -181,6 +176,7 @@
     © 2025 DohaTeslaLab. All rights reserved.
   </footer>
 
+  <!-- AOS Scroll 애니메이션 스크립트 -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init();
