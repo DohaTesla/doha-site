@@ -199,36 +199,6 @@
       line-height: 1.7em;
       color: #293147;
     }
-
-    /* Research Focus & Publications flex layout */
-    .research-flex, .pub-flex {
-      display: flex;
-      gap: 36px;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    .rf-text, .pub-list { flex: 2; min-width: 220px;}
-    .rf-img, .pub-img {
-      flex: 1;
-      min-width: 160px;
-      max-width: 260px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      align-items: center;
-      justify-content: center;
-    }
-    .rf-img img, .pub-img img {
-      width: 100%;
-      border-radius: 13px;
-      box-shadow: 0 4px 18px rgba(32,56,140,0.11);
-      border: 1.5px solid var(--border);
-      background: #eaf4ff;
-      margin-bottom: 0;
-      object-fit: cover;
-    }
-
     .focus-list li {
       font-size: 1.08em;
       margin-bottom: 7px;
@@ -284,10 +254,6 @@
       margin-top: 32px;
       letter-spacing: 0.04em;
     }
-    @media (max-width: 950px) {
-      .research-flex, .pub-flex { flex-direction: column; gap: 20px;}
-      .rf-img img, .pub-img img { max-width: 240px; margin: 0 auto;}
-    }
     @media (max-width: 900px) {
       .hero-content h1 { font-size: 2.2em; }
       .glassbox, section { padding-left: 8px; padding-right: 8px;}
@@ -330,21 +296,16 @@
         </div>
       </div>
     </section>
-    <!-- Research Focus with image -->
-    <section class="glassbox research-flex" data-aos="fade-right">
-      <div class="rf-text">
-        <h2>Research Focus</h2>
-        <ul class="focus-list">
-          <li>Plasma Geophysics</li>
-          <li>Geocentric Theory</li>
-          <li>Bioelectromagnetics</li>
-          <li>Temporal Rhythms</li>
-          <li>Evolutionary Memory</li>
-        </ul>
-      </div>
-      <div class="rf-img">
-        <img src="researchfocus.jpg" alt="Plasma geophysics illustration" />
-      </div>
+    <section class="glassbox" data-aos="fade-up">
+      <h2>Research Focus</h2>
+      <ul class="focus-list">
+        <li>Plasma Geophysics</li>
+        <li>Geocentric Theory</li>
+        <li>Bioelectromagnetics</li>
+        <li>Temporal Rhythms</li>
+        <li>Evolutionary Memory</li>
+      </ul>
+      <img src="researchfocus.jpg" alt="Research Focus image" class="ip-img"/>
     </section>
     <section class="glassbox" data-aos="fade-up">
       <h2>Intellectual Property</h2>
@@ -355,22 +316,17 @@
       </p>
       <img src="background.jpg" alt="Tech background" class="ip-img"/>
     </section>
-    <!-- Publications with image -->
-    <section class="glassbox pub-flex publications" data-aos="fade-left">
-      <div class="pub-img">
-        <img src="publications.jpg" alt="Publications illustration" />
-      </div>
-      <div class="pub-list">
-        <h2>Publications</h2>
-        <ul class="publications-list">
-          <li><strong>Reinterpreting Sensation:</strong> <a href="https://doi.org/10.5281/ZENODO.16725021">10.5281/ZENODO.16725021</a></li>
-          <li><strong>Reinterpreting the Code:</strong> <a href="https://doi.org/10.5281/ZENODO.16697554">10.5281/ZENODO.16697554</a></li>
-          <li><strong>Reinterpreting Earth:</strong> <a href="https://doi.org/10.5281/ZENODO.16662623">10.5281/ZENODO.16662623</a></li>
-          <li><strong>Reinterpreting Bacteria:</strong> <a href="https://doi.org/10.5281/ZENODO.16638099">10.5281/ZENODO.16638099</a></li>
-          <li><strong>Reinterpreting the Body:</strong> <a href="https://doi.org/10.5281/ZENODO.16542090">10.5281/ZENODO.16542090</a></li>
-          <li><strong>Reinterpreting the Sun:</strong> <a href="https://doi.org/10.5281/ZENODO.16338333">10.5281/ZENODO.16338333</a></li>
-        </ul>
-      </div>
+    <section class="glassbox publications" data-aos="fade-up">
+      <h2>Publications</h2>
+      <ul class="publications-list">
+        <li><strong>Reinterpreting Sensation:</strong> <a href="https://doi.org/10.5281/ZENODO.16725021">10.5281/ZENODO.16725021</a></li>
+        <li><strong>Reinterpreting the Code:</strong> <a href="https://doi.org/10.5281/ZENODO.16697554">10.5281/ZENODO.16697554</a></li>
+        <li><strong>Reinterpreting Earth:</strong> <a href="https://doi.org/10.5281/ZENODO.16662623">10.5281/ZENODO.16662623</a></li>
+        <li><strong>Reinterpreting Bacteria:</strong> <a href="https://doi.org/10.5281/ZENODO.16638099">10.5281/ZENODO.16638099</a></li>
+        <li><strong>Reinterpreting the Body:</strong> <a href="https://doi.org/10.5281/ZENODO.16542090">10.5281/ZENODO.16542090</a></li>
+        <li><strong>Reinterpreting the Sun:</strong> <a href="https://doi.org/10.5281/ZENODO.16338333">10.5281/ZENODO.16338333</a></li>
+      </ul>
+      <img src="publications.jpg" alt="Publications image" class="ip-img"/>
     </section>
     <section class="glassbox contact" data-aos="fade-up">
       <h2>Contact</h2>
@@ -387,4 +343,3 @@
   </script>
 </body>
 </html>
-
