@@ -13,6 +13,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet"/>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -20,11 +24,45 @@
       color: #222;
     }
 
-    header {
+    a {
+      color: #004488;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #222;
+      text-decoration: underline;
+    }
+
+    .hero {
+      position: relative;
       background-image: url('images/hero.jpg');
       background-size: cover;
       background-position: center;
       height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-overlay {
+      text-align: center;
+      color: white;
+      background-color: rgba(0,0,0,0.4);
+      padding: 2rem;
+      border-radius: 12px;
+    }
+
+    .hero-overlay h1 {
+      font-size: 3em;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .hero-overlay p {
+      font-size: 1.3em;
+      margin-top: 0.6em;
     }
 
     section {
@@ -35,11 +73,10 @@
 
     .intro {
       text-align: center;
-      margin-top: 40px;
     }
 
     .intro h1 {
-      font-size: 3.2em;
+      font-size: 2.6em;
       margin-bottom: 0.3em;
     }
 
@@ -68,13 +105,14 @@
       border-radius: 8px;
     }
 
-    .publications ul {
-      padding-left: 20px;
+    ul {
+      list-style: disc;
+      padding-left: 1.5em;
+      line-height: 1.6;
     }
 
     .contact a {
       color: #004488;
-      text-decoration: none;
     }
 
     footer {
@@ -91,19 +129,26 @@
       margin-top: 20px;
     }
 
-    /* 반응형 모바일 대응 */
     @media (max-width: 768px) {
       .about {
         flex-direction: column;
         text-align: center;
       }
 
-      .intro h1 {
-        font-size: 2.2em;
+      .hero-overlay h1 {
+        font-size: 2em;
       }
 
-      .intro p {
+      .hero-overlay p {
         font-size: 1em;
+      }
+
+      section {
+        padding: 60px 16px;
+      }
+
+      .intro h1 {
+        font-size: 2em;
       }
 
       .about img {
@@ -115,7 +160,12 @@
 </head>
 <body>
 
-  <header></header>
+  <header class="hero">
+    <div class="hero-overlay">
+      <h1>DohaTeslaLab</h1>
+      <p>Resonance · Memory · Evolution</p>
+    </div>
+  </header>
 
   <section class="intro" data-aos="fade-up">
     <h1>DohaTeslaLab</h1>
@@ -176,7 +226,7 @@
     © 2025 DohaTeslaLab. All rights reserved.
   </footer>
 
-  <!-- AOS Scroll 애니메이션 스크립트 -->
+  <!-- AOS Scroll 애니메이션 -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init();
