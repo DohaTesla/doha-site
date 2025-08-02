@@ -13,43 +13,34 @@
       color: #222;
     }
 
-    /* Hero full height */
     header {
       background-image: url('images/hero.jpg');
       background-size: cover;
       background-position: center;
       height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-text {
-      text-align: center;
-      color: white;
-      background-color: rgba(0,0,0,0.35);
-      padding: 40px 60px;
-      border-radius: 12px;
-      backdrop-filter: blur(3px);
-    }
-
-    .hero-text h1 {
-      font-size: 3.2em;
-      margin-bottom: 0.3em;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
-    }
-
-    .hero-text p {
-      font-size: 1.2em;
-      line-height: 1.5em;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-      margin: 0.5em 0;
     }
 
     section {
       padding: 80px 20px;
       max-width: 960px;
       margin: auto;
+    }
+
+    .intro {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .intro h1 {
+      font-size: 3.2em;
+      margin-bottom: 0.3em;
+    }
+
+    .intro p {
+      font-size: 1.2em;
+      line-height: 1.5em;
+      color: #444;
+      margin: 0.3em 0;
     }
 
     section h2 {
@@ -96,13 +87,13 @@
 </head>
 <body>
 
-  <header>
-    <div class="hero-text">
-      <h1>DohaTeslaLab</h1>
-      <p>Biological Intelligence: Engineered</p>
-      <p>— Resonance · Memory · Evolution</p>
-    </div>
-  </header>
+  <header></header>
+
+  <section class="intro">
+    <h1>DohaTeslaLab</h1>
+    <p>Biological Intelligence: Engineered</p>
+    <p>— Resonance · Memory · Evolution</p>
+  </section>
 
   <section class="about">
     <img src="images/profile.jpg" alt="Doha Lee portrait"/>
