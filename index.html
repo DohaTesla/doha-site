@@ -56,7 +56,6 @@
       font-family: 'JetBrains Mono', 'Inter', monospace;
     }
     nav .logo:hover, nav .logo:focus { color: var(--secondary); }
-    /* HERO */
     header {
       position: relative;
       width: 100vw;
@@ -175,23 +174,28 @@
       margin-bottom: 0.3em;
       letter-spacing: 0.03em;
     }
-    .about-flex {
+    .about-flex, .research-flex, .pub-flex {
       display: flex;
       gap: 48px;
       align-items: center;
       flex-wrap: wrap;
       justify-content: center;
     }
-    .about-flex img {
-      width: 230px;
-      max-width: 80vw;
+    .about-flex img,
+    .research-flex img,
+    .pub-flex img {
+      width: 180px;
+      max-width: 36vw;
       border-radius: 13px;
       box-shadow: 0 4px 24px 0 rgba(32,56,140,0.13);
       border: 1.5px solid var(--border);
       background: #eaf4ff;
-      margin-bottom: 18px;
+      margin-bottom: 0;
+      object-fit: cover;
     }
-    .about-flex div {
+    .about-flex div,
+    .research-flex div,
+    .pub-flex div {
       flex: 1;
       min-width: 230px;
       max-width: 600px;
@@ -257,18 +261,26 @@
     @media (max-width: 900px) {
       .hero-content h1 { font-size: 2.2em; }
       .glassbox, section { padding-left: 8px; padding-right: 8px;}
-      .about-flex { gap: 24px; }
+      .about-flex, .research-flex, .pub-flex { gap: 24px; }
       main { margin-top: -42px; }
+      .about-flex img,
+      .research-flex img,
+      .pub-flex img { width: 120px; }
     }
     @media (max-width: 650px) {
       nav { padding: 0.3em 0; }
       .hero-content { padding: 0 10px; }
       .hero-content h1 { font-size: 1.1em; }
-      .about-flex { flex-direction: column; }
-      .about-flex div { font-size: 1em; }
+      .about-flex, .research-flex, .pub-flex { flex-direction: column; }
+      .about-flex div,
+      .research-flex div,
+      .pub-flex div { font-size: 1em; }
       .glassbox { padding: 23px 8px 19px 8px; }
       section { padding-top: 42px; }
       .ip-img { margin-top: 14px;}
+      .about-flex img,
+      .research-flex img,
+      .pub-flex img { margin-bottom: 18px; width: 80vw; }
     }
   </style>
 </head>
@@ -296,17 +308,21 @@
         </div>
       </div>
     </section>
-    <!-- Research Focus - 이미지 추가 -->
+    <!-- Research Focus: 글씨 + 사진 나란히 -->
     <section class="glassbox" data-aos="fade-up">
-      <h2>Research Focus</h2>
-      <ul class="focus-list">
-        <li>Plasma Geophysics</li>
-        <li>Geocentric Theory</li>
-        <li>Bioelectromagnetics</li>
-        <li>Temporal Rhythms</li>
-        <li>Evolutionary Memory</li>
-      </ul>
-      <img src="images/researchfocus.jpg" alt="Research Focus Image" class="ip-img"/>
+      <div class="research-flex">
+        <img src="images/researchfocus.jpg" alt="Research Focus Image"/>
+        <div>
+          <h2>Research Focus</h2>
+          <ul class="focus-list">
+            <li>Plasma Geophysics</li>
+            <li>Geocentric Theory</li>
+            <li>Bioelectromagnetics</li>
+            <li>Temporal Rhythms</li>
+            <li>Evolutionary Memory</li>
+          </ul>
+        </div>
+      </div>
     </section>
     <section class="glassbox" data-aos="fade-up">
       <h2>Intellectual Property</h2>
@@ -317,18 +333,22 @@
       </p>
       <img src="images/background.jpg" alt="Tech background" class="ip-img"/>
     </section>
-    <!-- Publications - 이미지 추가 -->
+    <!-- Publications: 글씨 + 사진 나란히 -->
     <section class="glassbox publications" data-aos="fade-up">
-      <h2>Publications</h2>
-      <ul class="publications-list">
-        <li><strong>Reinterpreting Sensation:</strong> <a href="https://doi.org/10.5281/ZENODO.16725021">10.5281/ZENODO.16725021</a></li>
-        <li><strong>Reinterpreting the Code:</strong> <a href="https://doi.org/10.5281/ZENODO.16697554">10.5281/ZENODO.16697554</a></li>
-        <li><strong>Reinterpreting Earth:</strong> <a href="https://doi.org/10.5281/ZENODO.16662623">10.5281/ZENODO.16662623</a></li>
-        <li><strong>Reinterpreting Bacteria:</strong> <a href="https://doi.org/10.5281/ZENODO.16638099">10.5281/ZENODO.16638099</a></li>
-        <li><strong>Reinterpreting the Body:</strong> <a href="https://doi.org/10.5281/ZENODO.16542090">10.5281/ZENODO.16542090</a></li>
-        <li><strong>Reinterpreting the Sun:</strong> <a href="https://doi.org/10.5281/ZENODO.16338333">10.5281/ZENODO.16338333</a></li>
-      </ul>
-      <img src="images/publications.jpg" alt="Publications Image" class="ip-img"/>
+      <div class="pub-flex">
+        <img src="images/publications.jpg" alt="Publications Image"/>
+        <div>
+          <h2>Publications</h2>
+          <ul class="publications-list">
+            <li><strong>Reinterpreting Sensation:</strong> <a href="https://doi.org/10.5281/ZENODO.16725021">10.5281/ZENODO.16725021</a></li>
+            <li><strong>Reinterpreting the Code:</strong> <a href="https://doi.org/10.5281/ZENODO.16697554">10.5281/ZENODO.16697554</a></li>
+            <li><strong>Reinterpreting Earth:</strong> <a href="https://doi.org/10.5281/ZENODO.16662623">10.5281/ZENODO.16662623</a></li>
+            <li><strong>Reinterpreting Bacteria:</strong> <a href="https://doi.org/10.5281/ZENODO.16638099">10.5281/ZENODO.16638099</a></li>
+            <li><strong>Reinterpreting the Body:</strong> <a href="https://doi.org/10.5281/ZENODO.16542090">10.5281/ZENODO.16542090</a></li>
+            <li><strong>Reinterpreting the Sun:</strong> <a href="https://doi.org/10.5281/ZENODO.16338333">10.5281/ZENODO.16338333</a></li>
+          </ul>
+        </div>
+      </div>
     </section>
     <section class="glassbox contact" data-aos="fade-up">
       <h2>Contact</h2>
