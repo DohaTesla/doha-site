@@ -20,25 +20,33 @@
       height: 100vh;
       display: flex;
       align-items: center;
+      justify-content: center;
       padding-top: 30px;
     }
 
     .intro {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      padding: 40px;
       max-width: 1200px;
-      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .intro img {
+      max-width: 35vw;
+      height: auto;
+      border-radius: 10px;
     }
 
     .intro-text {
-      margin-left: 60px;
+      margin-left: 50px;
       max-width: 600px;
     }
 
     .intro-text h1 {
-      font-size: 3.2em;
+      font-size: 3em;
       margin-bottom: 0.3em;
     }
 
@@ -63,8 +71,7 @@
     }
 
     .about img {
-      max-width: 45vw;
-      height: auto;
+      max-width: 280px;
       border-radius: 8px;
     }
 
@@ -96,12 +103,29 @@
       border-radius: 6px;
       margin-top: 20px;
     }
+
+    @media screen and (max-width: 768px) {
+      .intro {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .intro img {
+        max-width: 80vw;
+        margin-bottom: 20px;
+      }
+
+      .intro-text {
+        margin-left: 0;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="intro">
+      <img src="images/profile.jpg" alt="Doha Lee portrait"/>
       <div class="intro-text">
         <h1>DohaTeslaLab</h1>
         <p>Biological Intelligence: Engineered</p>
