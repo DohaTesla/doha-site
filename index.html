@@ -4,7 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DohaTeslaLab</title>
+  <meta name="description" content="DohaTeslaLab is an independent research lab exploring plasma geophysics and bioelectromagnetics.">
+  <meta property="og:title" content="DohaTeslaLab – Plasma & Consciousness Research">
+  <meta property="og:description" content="Independent theory lab exploring plasma geophysics, bioelectromagnetics, and the resonance of life.">
+  <meta property="og:image" content="https://bespoke-meerkat-51df1a.netlify.app/images/hero.jpg">
+  <meta property="og:url" content="https://bespoke-meerkat-51df1a.netlify.app/">
+  <meta property="og:type" content="website">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
@@ -17,40 +24,36 @@
       background-image: url('images/hero.jpg');
       background-size: cover;
       background-position: center;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      position: relative;
-    }
-
-    .intro-text {
-      max-width: 720px;
-      padding: 40px;
-      background-color: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(8px);
-      border-radius: 16px;
-      text-align: center;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    }
-
-    .intro-text h1 {
-      font-size: 3em;
-      margin-bottom: 0.3em;
-    }
-
-    .intro-text p {
-      font-size: 1.2em;
-      line-height: 1.5em;
-      color: #444;
-      margin: 0.3em 0;
+      height: 100vh;
     }
 
     section {
       padding: 80px 20px;
       max-width: 960px;
       margin: auto;
+    }
+
+    .intro {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .intro h1 {
+      font-size: 3.2em;
+      margin-bottom: 0.3em;
+    }
+
+    .intro p {
+      font-size: 1.2em;
+      line-height: 1.5em;
+      color: #444;
+      margin: 0.3em 0;
+    }
+
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+      color: #333;
     }
 
     .about {
@@ -61,14 +64,8 @@
     }
 
     .about img {
-      max-width: 280px;
+      width: 280px;
       border-radius: 8px;
-    }
-
-    section h2 {
-      font-size: 2em;
-      margin-bottom: 0.5em;
-      color: #333;
     }
 
     .publications ul {
@@ -94,33 +91,39 @@
       margin-top: 20px;
     }
 
-    @media screen and (max-width: 768px) {
+    /* 반응형 모바일 대응 */
+    @media (max-width: 768px) {
       .about {
         flex-direction: column;
         text-align: center;
       }
 
-      .intro-text {
-        padding: 20px;
+      .intro h1 {
+        font-size: 2.2em;
       }
 
-      .intro-text h1 {
-        font-size: 2em;
+      .intro p {
+        font-size: 1em;
+      }
+
+      .about img {
+        width: 100%;
+        max-width: 240px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="intro-text">
-      <h1>DohaTeslaLab</h1>
-      <p>Biological Intelligence: Engineered</p>
-      <p>— Resonance · Memory · Evolution</p>
-    </div>
-  </header>
+  <header></header>
 
-  <section class="about">
+  <section class="intro" data-aos="fade-up">
+    <h1>DohaTeslaLab</h1>
+    <p>Biological Intelligence: Engineered</p>
+    <p>— Resonance · Memory · Evolution</p>
+  </section>
+
+  <section class="about" data-aos="fade-up">
     <img src="images/profile.jpg" alt="Doha Lee portrait"/>
     <div>
       <h2>About</h2>
@@ -130,7 +133,7 @@
     </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Research Focus</h2>
     <ul>
       <li>Plasma Geophysics</li>
@@ -141,7 +144,7 @@
     </ul>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Intellectual Property</h2>
     <p>
       Several original technologies have been filed with the Korean Intellectual Property Office in 2025.<br/>
@@ -151,7 +154,7 @@
     <img src="images/background.jpg" alt="Tech background" class="fullwidth"/>
   </section>
 
-  <section class="publications">
+  <section class="publications" data-aos="fade-up">
     <h2>Publications</h2>
     <ul>
       <li><strong>Reinterpreting Sensation:</strong> <a href="https://doi.org/10.5281/ZENODO.16725021">10.5281/ZENODO.16725021</a></li>
@@ -163,7 +166,7 @@
     </ul>
   </section>
 
-  <section class="contact">
+  <section class="contact" data-aos="fade-up">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:dohaplanet1@gmail.com">dohaplanet1@gmail.com</a></p>
     <p>ORCID: <a href="https://orcid.org/0009-0002-2846-2867" target="_blank">https://orcid.org/0009-0002-2846-2867</a></p>
@@ -172,6 +175,12 @@
   <footer>
     © 2025 DohaTeslaLab. All rights reserved.
   </footer>
+
+  <!-- AOS Scroll 애니메이션 스크립트 -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
 </body>
 </html>
