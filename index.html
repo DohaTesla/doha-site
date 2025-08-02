@@ -10,177 +10,307 @@
   <meta property="og:image" content="https://bespoke-meerkat-51df1a.netlify.app/images/hero.jpg">
   <meta property="og:url" content="https://bespoke-meerkat-51df1a.netlify.app/">
   <meta property="og:type" content="website">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
   <style>
-    body {
+    :root {
+      --primary: #0246a6;
+      --secondary: #00c6ae;
+      --background: #f7fafb;
+      --glass: rgba(255,255,255,0.7);
+      --border: rgba(60, 60, 90, 0.15);
+      --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+      --radius: 20px;
+    }
+    html, body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: #222;
+      padding: 0;
+      font-family: 'Inter', 'JetBrains Mono', monospace, sans-serif;
+      background: var(--background);
+      color: #21243a;
+      scroll-behavior: smooth;
     }
-
-    header {
-      background-image: url('images/hero.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 960px;
-      margin: auto;
-    }
-
-    .intro {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .intro h1 {
-      font-size: 3.2em;
-      margin-bottom: 0.3em;
-    }
-
-    .intro p {
-      font-size: 1.2em;
-      line-height: 1.5em;
-      color: #444;
-      margin: 0.3em 0;
-    }
-
-    section h2 {
-      font-size: 2em;
-      margin-bottom: 0.5em;
-      color: #333;
-    }
-
-    .about {
+    /* NAV */
+    nav {
+      position: fixed;
+      z-index: 99;
+      width: 100%;
+      top: 0; left: 0;
+      padding: 0.7em 0;
+      background: rgba(255,255,255,0.38);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
       display: flex;
-      gap: 40px;
+      justify-content: center;
+      align-items: center;
+    }
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.25em;
+      letter-spacing: 0.07em;
+      color: var(--primary);
+      text-shadow: 0 2px 8px rgba(80,80,150,0.06);
+      text-decoration: none;
+      transition: color .18s;
+    }
+    nav .logo:hover, nav .logo:focus { color: var(--secondary); }
+
+    /* HERO */
+    header {
+      background: url('images/hero.jpg') center/cover no-repeat;
+      height: 95vh;
+      min-height: 430px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: stretch;
+      box-shadow: 0 10px 38px 0 rgba(20,30,50,0.13);
+    }
+    .hero-overlay {
+      width: 100%;
+      padding: 0 0 5vh 0;
+      background: linear-gradient(0deg,rgba(16,29,45,0.76) 0%,rgba(24,37,54,0.48) 60%,rgba(32,49,62,0.09) 100%);
+      backdrop-filter: blur(1.5px);
+      border-radius: 0 0 var(--radius) var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-content {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto;
+      color: #fff;
+      filter: drop-shadow(0 8px 32px rgba(10,10,32,0.13));
+    }
+    .hero-content h1 {
+      font-size: 3.4em;
+      font-weight: 800;
+      margin-bottom: 0.15em;
+      letter-spacing: -0.02em;
+      font-family: 'JetBrains Mono', 'Inter', monospace;
+      text-shadow: 0 2px 24px rgba(0,32,90,0.14);
+    }
+    .hero-content p {
+      font-size: 1.3em;
+      font-weight: 500;
+      margin-bottom: 0.3em;
+      color: #cbeaf9;
+      text-shadow: 0 2px 16px rgba(0,32,90,0.16);
+    }
+    .hero-content .tagline {
+      font-size: 1.1em;
+      color: var(--secondary);
+      margin-bottom: 0.7em;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+    }
+
+    main {
+      margin-top: -64px;
+      background: var(--background);
+      border-radius: var(--radius) var(--radius) 0 0;
+      box-shadow: 0 -4px 36px 0 rgba(20,30,60,0.06);
+      z-index: 1;
+      position: relative;
+      padding-bottom: 0;
+    }
+    section {
+      padding: 68px 0 32px 0;
+      margin: 0 auto;
+      max-width: 940px;
+      width: 95%;
+      display: block;
+      background: none;
+    }
+    .glassbox {
+      background: var(--glass);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px 34px 30px 34px;
+      margin-bottom: 48px;
+      transition: box-shadow .22s;
+    }
+    .glassbox:hover {
+      box-shadow: 0 12px 44px 0 rgba(32,56,140,0.15);
+    }
+    section h2 {
+      font-size: 2.1em;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.3em;
+      letter-spacing: 0.03em;
+    }
+    /* ABOUT */
+    .about-flex {
+      display: flex;
+      gap: 48px;
       align-items: center;
       flex-wrap: wrap;
+      justify-content: center;
     }
-
-    .about img {
-      width: 280px;
-      border-radius: 8px;
+    .about-flex img {
+      width: 230px;
+      max-width: 80vw;
+      border-radius: 13px;
+      box-shadow: 0 4px 24px 0 rgba(32,56,140,0.13);
+      border: 1.5px solid var(--border);
+      background: #eaf4ff;
+      margin-bottom: 18px;
     }
-
-    .publications ul {
-      padding-left: 20px;
+    .about-flex div {
+      flex: 1;
+      min-width: 230px;
+      max-width: 600px;
+      font-size: 1.14em;
+      line-height: 1.7em;
+      color: #293147;
     }
-
-    .contact a {
-      color: #004488;
-      text-decoration: none;
+    /* RESEARCH LIST */
+    .focus-list li {
+      font-size: 1.08em;
+      margin-bottom: 7px;
+      line-height: 1.5em;
+      font-weight: 500;
+      color: #234;
+      list-style-type: '→ ';
+      padding-left: 0.3em;
     }
-
-    footer {
-      background: #f3f3f3;
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.9em;
-      color: #777;
-    }
-
-    img.fullwidth {
+    /* INTELLECTUAL PROPERTY */
+    .ip-img {
       width: 100%;
-      border-radius: 6px;
-      margin-top: 20px;
+      border-radius: 13px;
+      margin-top: 22px;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 4px 18px 0 rgba(32,56,140,0.09);
     }
-
-    /* 반응형 모바일 대응 */
-    @media (max-width: 768px) {
-      .about {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .intro h1 {
-        font-size: 2.2em;
-      }
-
-      .intro p {
-        font-size: 1em;
-      }
-
-      .about img {
-        width: 100%;
-        max-width: 240px;
-      }
+    /* PUBLICATIONS */
+    .publications-list {
+      padding-left: 1.6em;
+    }
+    .publications-list li {
+      margin-bottom: 8px;
+      font-size: 1.03em;
+      line-height: 1.35em;
+    }
+    .publications-list a {
+      color: var(--primary);
+      text-decoration: underline;
+      transition: color .15s;
+    }
+    .publications-list a:hover,
+    .publications-list a:focus {
+      color: var(--secondary);
+      text-decoration: underline wavy;
+    }
+    /* CONTACT */
+    .contact-link {
+      color: var(--primary);
+      font-weight: 500;
+      text-decoration: underline;
+      word-break: break-all;
+      transition: color .15s;
+    }
+    .contact-link:hover,
+    .contact-link:focus {
+      color: var(--secondary);
+    }
+    /* FOOTER */
+    footer {
+      background: linear-gradient(90deg, #e9f5fe 0%, #f8fafc 100%);
+      text-align: center;
+      padding: 40px 15px 32px 15px;
+      font-size: 1em;
+      color: #7b8594;
+      border-top: 1.5px solid var(--border);
+      margin-top: 32px;
+      letter-spacing: 0.04em;
+    }
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-content h1 { font-size: 2.1em; }
+      .glassbox, section { padding-left: 8px; padding-right: 8px;}
+      .about-flex { gap: 24px; }
+      main { margin-top: -42px; }
+    }
+    @media (max-width: 650px) {
+      nav { padding: 0.3em 0; }
+      .hero-content { padding: 0 10px; }
+      .hero-content h1 { font-size: 1.3em; }
+      .about-flex { flex-direction: column; }
+      .about-flex div { font-size: 1em; }
+      .glassbox { padding: 23px 8px 19px 8px; }
+      section { padding-top: 42px; }
+      .ip-img { margin-top: 14px;}
     }
   </style>
 </head>
 <body>
-
-  <header></header>
-
-  <section class="intro" data-aos="fade-up">
-    <h1>DohaTeslaLab</h1>
-    <p>Biological Intelligence: Engineered</p>
-    <p>— Resonance · Memory · Evolution</p>
-  </section>
-
-  <section class="about" data-aos="fade-up">
-    <img src="images/profile.jpg" alt="Doha Lee portrait"/>
-    <div>
-      <h2>About</h2>
-      <p>
-        Doha Lee is an independent interdisciplinary theorist exploring geocentric plasma dynamics and resonant interactions across biological, cognitive, and atmospheric systems. Their work focuses on bioelectromagnetics, temporal rhythms, sensory perception, and the energetic architecture of life and consciousness.
-      </p>
+  <nav>
+    <a href="#" class="logo">DohaTeslaLab</a>
+  </nav>
+  <header>
+    <div class="hero-overlay">
+      <div class="hero-content" data-aos="fade-up">
+        <h1>DohaTeslaLab</h1>
+        <div class="tagline">Biological Intelligence: Engineered</div>
+        <p>— Resonance · Memory · Evolution</p>
+      </div>
     </div>
-  </section>
-
-  <section data-aos="fade-up">
-    <h2>Research Focus</h2>
-    <ul>
-      <li>Plasma Geophysics</li>
-      <li>Geocentric Theory</li>
-      <li>Bioelectromagnetics</li>
-      <li>Temporal Rhythms</li>
-      <li>Evolutionary Memory</li>
-    </ul>
-  </section>
-
-  <section data-aos="fade-up">
-    <h2>Intellectual Property</h2>
-    <p>
-      Several original technologies have been filed with the Korean Intellectual Property Office in 2025.<br/>
-      All details are currently protected under examination.<br/>
-      Specific identifiers withheld to ensure legal safety and strategic integrity.
-    </p>
-    <img src="images/background.jpg" alt="Tech background" class="fullwidth"/>
-  </section>
-
-  <section class="publications" data-aos="fade-up">
-    <h2>Publications</h2>
-    <ul>
-      <li><strong>Reinterpreting Sensation:</strong> <a href="https://doi.org/10.5281/ZENODO.16725021">10.5281/ZENODO.16725021</a></li>
-      <li><strong>Reinterpreting the Code:</strong> <a href="https://doi.org/10.5281/ZENODO.16697554">10.5281/ZENODO.16697554</a></li>
-      <li><strong>Reinterpreting Earth:</strong> <a href="https://doi.org/10.5281/ZENODO.16662623">10.5281/ZENODO.16662623</a></li>
-      <li><strong>Reinterpreting Bacteria:</strong> <a href="https://doi.org/10.5281/ZENODO.16638099">10.5281/ZENODO.16638099</a></li>
-      <li><strong>Reinterpreting the Body:</strong> <a href="https://doi.org/10.5281/ZENODO.16542090">10.5281/ZENODO.16542090</a></li>
-      <li><strong>Reinterpreting the Sun:</strong> <a href="https://doi.org/10.5281/ZENODO.16338333">10.5281/ZENODO.16338333</a></li>
-    </ul>
-  </section>
-
-  <section class="contact" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:dohaplanet1@gmail.com">dohaplanet1@gmail.com</a></p>
-    <p>ORCID: <a href="https://orcid.org/0009-0002-2846-2867" target="_blank">https://orcid.org/0009-0002-2846-2867</a></p>
-  </section>
-
+  </header>
+  <main>
+    <section class="glassbox" data-aos="fade-up">
+      <div class="about-flex">
+        <img src="images/profile.jpg" alt="Doha Lee portrait"/>
+        <div>
+          <h2>About</h2>
+          Doha Lee is an independent interdisciplinary theorist exploring geocentric plasma dynamics and resonant interactions across biological, cognitive, and atmospheric systems. Their work focuses on bioelectromagnetics, temporal rhythms, sensory perception, and the energetic architecture of life and consciousness.
+        </div>
+      </div>
+    </section>
+    <section class="glassbox" data-aos="fade-up">
+      <h2>Research Focus</h2>
+      <ul class="focus-list">
+        <li>Plasma Geophysics</li>
+        <li>Geocentric Theory</li>
+        <li>Bioelectromagnetics</li>
+        <li>Temporal Rhythms</li>
+        <li>Evolutionary Memory</li>
+      </ul>
+    </section>
+    <section class="glassbox" data-aos="fade-up">
+      <h2>Intellectual Property</h2>
+      <p>
+        Several original technologies have been filed with the Korean Intellectual Property Office in 2025.<br/>
+        All details are currently protected under examination.<br/>
+        Specific identifiers withheld to ensure legal safety and strategic integrity.
+      </p>
+      <img src="images/background.jpg" alt="Tech background" class="ip-img"/>
+    </section>
+    <section class="glassbox publications" data-aos="fade-up">
+      <h2>Publications</h2>
+      <ul class="publications-list">
+        <li><strong>Reinterpreting Sensation:</strong> <a href="https://doi.org/10.5281/ZENODO.16725021">10.5281/ZENODO.16725021</a></li>
+        <li><strong>Reinterpreting the Code:</strong> <a href="https://doi.org/10.5281/ZENODO.16697554">10.5281/ZENODO.16697554</a></li>
+        <li><strong>Reinterpreting Earth:</strong> <a href="https://doi.org/10.5281/ZENODO.16662623">10.5281/ZENODO.16662623</a></li>
+        <li><strong>Reinterpreting Bacteria:</strong> <a href="https://doi.org/10.5281/ZENODO.16638099">10.5281/ZENODO.16638099</a></li>
+        <li><strong>Reinterpreting the Body:</strong> <a href="https://doi.org/10.5281/ZENODO.16542090">10.5281/ZENODO.16542090</a></li>
+        <li><strong>Reinterpreting the Sun:</strong> <a href="https://doi.org/10.5281/ZENODO.16338333">10.5281/ZENODO.16338333</a></li>
+      </ul>
+    </section>
+    <section class="glassbox contact" data-aos="fade-up">
+      <h2>Contact</h2>
+      <p>Email: <a class="contact-link" href="mailto:dohaplanet1@gmail.com">dohaplanet1@gmail.com</a></p>
+      <p>ORCID: <a class="contact-link" href="https://orcid.org/0009-0002-2846-2867" target="_blank">https://orcid.org/0009-0002-2846-2867</a></p>
+    </section>
+  </main>
   <footer>
     © 2025 DohaTeslaLab. All rights reserved.
   </footer>
-
-  <!-- AOS Scroll 애니메이션 스크립트 -->
+  <!-- AOS Scroll Animation -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({ duration: 750, once: true });
   </script>
-
 </body>
 </html>
