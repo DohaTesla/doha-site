@@ -12,26 +12,37 @@
       background-color: #ffffff;
       color: #222;
     }
-    header, section {
-      padding: 80px 20px;
-      max-width: 960px;
-      margin: auto;
-    }
     header {
       background-image: url('images/hero.jpg');
       background-size: cover;
       background-position: center;
-      color: #003344;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-text {
       text-align: center;
-      padding-top: 160px;
-      padding-bottom: 160px;
+      color: white;
+      background-color: rgba(0,0,0,0.4);
+      padding: 40px;
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
     }
-    header h1 {
+    .hero-text h1 {
       font-size: 3em;
-      margin-bottom: 0.2em;
+      margin-bottom: 0.3em;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
     }
-    header p {
-      font-size: 1.3em;
+    .hero-text p {
+      font-size: 1.2em;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 960px;
+      margin: auto;
     }
     section h2 {
       font-size: 2em;
@@ -62,13 +73,20 @@
       font-size: 0.9em;
       color: #777;
     }
+    img.fullwidth {
+      width: 100%;
+      border-radius: 6px;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>DohaTeslaLab</h1>
-    <p>Plasma Geophysics · Bioelectromagnetics · Temporal Rhythms</p>
+    <div class="hero-text">
+      <h1>DohaTeslaLab</h1>
+      <p>Biological Intelligence. Engineered.<br/>Plasma Geophysics · Bioelectromagnetics · Temporal Rhythms</p>
+    </div>
   </header>
 
   <section class="about">
@@ -100,36 +118,18 @@
       <br/><br/>
       <em>(For technology inquiries, please contact us directly.)</em>
     </p>
-    <img src="images/background.jpg" alt="Tech background" style="width: 100%; border-radius: 6px; margin-top: 20px;"/>
+    <img src="images/background.jpg" alt="Tech background" class="fullwidth"/>
   </section>
 
   <section class="publications">
     <h2>Publications</h2>
     <ul>
-      <li>
-        <strong>Reinterpreting Sensation:</strong> A Bioelectromagnetic Framework for the Nine-Sense Model  
-        <br/>DOI: <a href="https://doi.org/10.5281/ZENODO.16725021">10.5281/ZENODO.16725021</a>
-      </li>
-      <li>
-        <strong>Reinterpreting the Code:</strong> A Resonance Loop Model for Destigmatizing the Mind  
-        <br/>DOI: <a href="https://doi.org/10.5281/ZENODO.16697554">10.5281/ZENODO.16697554</a>
-      </li>
-      <li>
-        <strong>Reinterpreting Earth:</strong> A Plasma-Based Interior Structure and Geomagnetic Resonance Model  
-        <br/>DOI: <a href="https://doi.org/10.5281/ZENODO.16662623">10.5281/ZENODO.16662623</a>
-      </li>
-      <li>
-        <strong>Reinterpreting Bacteria:</strong> Resonant Electromagnetic Foundations of Life's Origin  
-        <br/>DOI: <a href="https://doi.org/10.5281/ZENODO.16638099">10.5281/ZENODO.16638099</a>
-      </li>
-      <li>
-        <strong>Reinterpreting the Body:</strong> A Resonant Electromagnetic Model of the Heart–Brain Axis and Geomagnetic Synchronization  
-        <br/>DOI: <a href="https://doi.org/10.5281/ZENODO.16542090">10.5281/ZENODO.16542090</a>
-      </li>
-      <li>
-        <strong>Reinterpreting the Sun:</strong> A Geocentric Plasma Illumination Model and Atmospheric Discharge Theory of Light Origin  
-        <br/>DOI: <a href="https://doi.org/10.5281/ZENODO.16338333">10.5281/ZENODO.16338333</a>
-      </li>
+      <li><strong>Reinterpreting Sensation:</strong> <a href="https://doi.org/10.5281/ZENODO.16725021">10.5281/ZENODO.16725021</a></li>
+      <li><strong>Reinterpreting the Code:</strong> <a href="https://doi.org/10.5281/ZENODO.16697554">10.5281/ZENODO.16697554</a></li>
+      <li><strong>Reinterpreting Earth:</strong> <a href="https://doi.org/10.5281/ZENODO.16662623">10.5281/ZENODO.16662623</a></li>
+      <li><strong>Reinterpreting Bacteria:</strong> <a href="https://doi.org/10.5281/ZENODO.16638099">10.5281/ZENODO.16638099</a></li>
+      <li><strong>Reinterpreting the Body:</strong> <a href="https://doi.org/10.5281/ZENODO.16542090">10.5281/ZENODO.16542090</a></li>
+      <li><strong>Reinterpreting the Sun:</strong> <a href="https://doi.org/10.5281/ZENODO.16338333">10.5281/ZENODO.16338333</a></li>
     </ul>
   </section>
 
