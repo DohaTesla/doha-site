@@ -17,35 +17,24 @@
       background-size: cover;
       background-position: center;
       height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding-left: 10%;
-      padding-right: 10%;
-    }
-    .hero-text.side {
-      max-width: 40%;
-      color: white;
-      background-color: rgba(0,0,0,0.3);
-      padding: 30px;
-      border-radius: 10px;
-      backdrop-filter: blur(2px);
-    }
-    .hero-text.side h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.3em;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-    }
-    .hero-text.side p {
-      font-size: 1.1em;
-      line-height: 1.5em;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
     }
     section {
       padding: 80px 20px;
       max-width: 960px;
       margin: auto;
+    }
+    .intro {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .intro h1 {
+      font-size: 2.8em;
+      margin-bottom: 0.4em;
+    }
+    .intro p {
+      font-size: 1.2em;
+      line-height: 1.6em;
+      color: #444;
     }
     section h2 {
       font-size: 2em;
@@ -85,12 +74,13 @@
 </head>
 <body>
 
-  <header>
-    <div class="hero-text side">
-      <h1>DohaTeslaLab</h1>
-      <p>Biological Intelligence. Engineered.<br/>Plasma Geophysics · Bioelectromagnetics · Temporal Rhythms</p>
-    </div>
-  </header>
+  <header></header>
+
+  <section class="intro">
+    <h1>DohaTeslaLab</h1>
+    <p>Biological Intelligence. Engineered.<br/>
+    Plasma Geophysics · Bioelectromagnetics · Temporal Rhythms</p>
+  </section>
 
   <section class="about">
     <img src="images/profile.jpg" alt="Doha Lee portrait"/>
