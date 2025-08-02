@@ -20,24 +20,27 @@
       position: relative;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      padding-left: 10%;
+      padding-right: 10%;
     }
-    .hero-text {
-      text-align: center;
+    .hero-text.side {
+      max-width: 40%;
       color: white;
-      background-color: rgba(0,0,0,0.4);
-      padding: 40px;
-      border-radius: 12px;
-      backdrop-filter: blur(4px);
+      background-color: rgba(0,0,0,0.3);
+      padding: 30px;
+      border-radius: 10px;
+      backdrop-filter: blur(2px);
     }
-    .hero-text h1 {
-      font-size: 3em;
+    .hero-text.side h1 {
+      font-size: 2.5em;
       margin-bottom: 0.3em;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
     }
-    .hero-text p {
-      font-size: 1.2em;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    .hero-text.side p {
+      font-size: 1.1em;
+      line-height: 1.5em;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
     }
     section {
       padding: 80px 20px;
@@ -83,7 +86,7 @@
 <body>
 
   <header>
-    <div class="hero-text">
+    <div class="hero-text side">
       <h1>DohaTeslaLab</h1>
       <p>Biological Intelligence. Engineered.<br/>Plasma Geophysics · Bioelectromagnetics · Temporal Rhythms</p>
     </div>
