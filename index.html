@@ -12,6 +12,7 @@
   <meta property="og:type" content="website">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <link rel="icon" type="image/png" href="images/profile.jpg"/>
   <style>
     :root {
       --primary: #0246a6;
@@ -68,6 +69,18 @@
       justify-content: center;
       z-index: 1;
     }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,rgba(16,29,45,0.74) 0%,rgba(28,47,60,0.48) 80%,rgba(16,29,45,0.85) 100%);
+      -webkit-backdrop-filter: blur(2.8px);
+      backdrop-filter: blur(2.8px);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
     .hero-content {
       z-index: 3;
       width: 100%;
@@ -82,12 +95,19 @@
       align-items: center;
       justify-content: center;
     }
-.hero-content h1, .hero-content .tagline, .hero-content p {
-  text-shadow: 0 2px 8px rgba(16,16,64,0.21), 0 6px 24px rgba(20,20,32,0.17);
-}
-.hero-overlay {
-  background: linear-gradient(180deg,rgba(12,18,32,0.80) 0%,rgba(24,44,68,0.60) 100%,rgba(16,29,45,0.88) 100%);
-}
+    .hero-content h1 {
+      font-size: 3.8em;
+      font-weight: 900;
+      margin-bottom: 0.15em;
+      letter-spacing: -0.01em;
+      font-family: 'JetBrains Mono', 'Inter', monospace;
+      text-shadow: 0 2px 24px rgba(0,32,90,0.14);
+      line-height: 1.1;
+      background: linear-gradient(90deg, #fff 65%, #a5f0e7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
     .hero-content .tagline {
       font-size: 1.27em;
       font-weight: 600;
@@ -95,6 +115,7 @@
       margin-bottom: 0.45em;
       letter-spacing: 0.14em;
       text-shadow: 0 2px 18px rgba(0,64,128,0.19);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.19);
     }
     .hero-content p {
       font-size: 1.22em;
@@ -180,20 +201,13 @@
       line-height: 1.7em;
       color: #293147;
     }
-
-    /* 반응형! */
     .research-flex, .pub-flex {
       display: flex;
+      flex-direction: row-reverse;
       gap: 48px;
       align-items: center;
-      justify-content: center;
       flex-wrap: wrap;
-    }
-    .research-flex {
-      flex-direction: row;
-    }
-    .pub-flex {
-      flex-direction: row;
+      justify-content: center;
     }
     .research-flex img,
     .pub-flex img {
@@ -206,8 +220,8 @@
       object-fit: cover;
       margin-bottom: 0;
     }
-    .research-flex > div,
-    .pub-flex > div {
+    .research-flex div,
+    .pub-flex div {
       flex: 1;
       min-width: 230px;
       max-width: 600px;
@@ -215,27 +229,6 @@
       line-height: 1.7em;
       color: #293147;
     }
-
-    @media (max-width: 900px) {
-      .hero-content h1 { font-size: 2.2em; }
-      .glassbox, section { padding-left: 8px; padding-right: 8px;}
-      .about-flex, .research-flex, .pub-flex { gap: 24px; }
-      main { margin-top: -42px; }
-      .about-flex img { width: 120px; }
-      .research-flex img,
-      .pub-flex img { width: 180px; }
-    }
-    @media (max-width: 650px) {
-      .about-flex, .research-flex, .pub-flex { flex-direction: column; }
-      .about-flex div, .research-flex div, .pub-flex div { font-size: 1em; }
-      .glassbox { padding: 23px 8px 19px 8px; }
-      section { padding-top: 42px; }
-      .ip-img { margin-top: 14px;}
-      .about-flex img { margin-bottom: 18px; width: 80vw; }
-      .research-flex img,
-      .pub-flex img { width: 80vw; margin-bottom: 18px; }
-    }
-
     .focus-list li {
       font-size: 1.08em;
       margin-bottom: 7px;
@@ -251,6 +244,8 @@
       margin-top: 22px;
       border: 1.5px solid var(--border);
       box-shadow: 0 4px 18px 0 rgba(32,56,140,0.09);
+      object-fit: cover;
+      background: #f8fbfd;
     }
     .publications-list {
       padding-left: 1.6em;
@@ -264,6 +259,7 @@
       color: var(--primary);
       text-decoration: underline;
       transition: color .15s;
+      word-break: break-all;
     }
     .publications-list a:hover,
     .publications-list a:focus {
@@ -290,6 +286,28 @@
       border-top: 1.5px solid var(--border);
       margin-top: 32px;
       letter-spacing: 0.04em;
+    }
+    @media (max-width: 900px) {
+      .hero-content h1 { font-size: 2.2em; }
+      .glassbox, section { padding-left: 8px; padding-right: 8px;}
+      .about-flex, .research-flex, .pub-flex { gap: 24px; }
+      main { margin-top: -42px; }
+      .about-flex img { width: 120px; }
+      .research-flex img,
+      .pub-flex img { width: 180px; }
+    }
+    @media (max-width: 650px) {
+      nav { padding: 0.3em 0; }
+      .hero-content { padding: 0 10px; }
+      .hero-content h1 { font-size: 1.1em; }
+      .about-flex, .research-flex, .pub-flex { flex-direction: column; }
+      .about-flex div, .research-flex div, .pub-flex div { font-size: 1em; }
+      .glassbox { padding: 23px 8px 19px 8px; }
+      section { padding-top: 42px; }
+      .ip-img { margin-top: 14px;}
+      .about-flex img { margin-bottom: 18px; width: 80vw; }
+      .research-flex img,
+      .pub-flex img { width: 80vw; margin-bottom: 18px; }
     }
   </style>
 </head>
@@ -340,7 +358,7 @@
         All details are currently protected under examination.<br/>
         Specific identifiers withheld to ensure legal safety and strategic integrity.
       </p>
-      <img src="images/background.jpg" alt="Tech background" class="ip-img"/>
+      <img src="images/ip-circuit.png" alt="Intellectual Property Illustration" class="ip-img"/>
     </section>
     <!-- Publications: 텍스트 왼쪽, 이미지 오른쪽, 크게 -->
     <section class="glassbox publications" data-aos="fade-up">
@@ -361,16 +379,11 @@
     </section>
     <section class="glassbox contact" data-aos="fade-up">
       <h2>Contact</h2>
-      <p>Email: <a class="contact-link" href="mailto:hello@dohateslalab.org">hello@dohateslalab.org</a></p>
+      <p>Email: <a class="contact-link" href="mailto:dohaplanet1@gmail.com">dohaplanet1@gmail.com</a></p>
       <p>ORCID: <a class="contact-link" href="https://orcid.org/0009-0002-2846-2867" target="_blank">https://orcid.org/0009-0002-2846-2867</a></p>
     </section>
   </main>
   <footer>
     © 2025 DohaTeslaLab. All rights reserved.
   </footer>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 750, once: true });
-  </script>
-</body>
-</html>
+  <script src="https://un
