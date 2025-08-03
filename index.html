@@ -15,12 +15,12 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
   <style>
     :root {
-      --primary: #0246a6;
-      --secondary: #00c6ae;
-      --background: #f7fafb;
-      --glass: rgba(255,255,255,0.72);
-      --border: rgba(60, 60, 90, 0.15);
-      --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+      --primary: #04d9ff;
+      --secondary: #26ffe6;
+      --background: #12161a;
+      --glass: rgba(20,22,28,0.93);
+      --border: rgba(80,220,255,0.13);
+      --shadow: 0 8px 32px 0 rgba(0,32,64,0.19);
       --radius: 20px;
     }
     html, body {
@@ -28,8 +28,9 @@
       padding: 0;
       font-family: 'Inter', 'JetBrains Mono', monospace, sans-serif;
       background: var(--background);
-      color: #21243a;
+      color: #f8fafc;
       scroll-behavior: smooth;
+      -webkit-tap-highlight-color: rgba(4,217,255,0.10);
     }
     nav {
       position: fixed;
@@ -37,7 +38,7 @@
       width: 100%;
       top: 0; left: 0;
       padding: 0.8em 0 0.8em 0;
-      background: rgba(255,255,255,0.19);
+      background: rgba(24,24,32,0.82);
       -webkit-backdrop-filter: blur(14px);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
@@ -51,7 +52,7 @@
       font-size: 1.38em;
       letter-spacing: 0.08em;
       color: var(--primary);
-      text-shadow: 0 2px 8px rgba(80,80,150,0.05);
+      text-shadow: 0 2px 8px rgba(0,80,160,0.06);
       text-decoration: none;
       transition: color .18s;
       font-family: 'JetBrains Mono', 'Inter', monospace;
@@ -64,7 +65,7 @@
       width: 1.7em;
       border-radius: 6px;
       border: 1px solid var(--border);
-      background: #fff;
+      background: #181d23;
       object-fit: cover;
       margin-left: 0.2em;
     }
@@ -84,7 +85,7 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg,rgba(16,29,45,0.74) 0%,rgba(28,47,60,0.48) 80%,rgba(16,29,45,0.85) 100%);
+      background: linear-gradient(180deg,rgba(6,13,21,0.87) 0%,rgba(25,38,52,0.44) 78%,rgba(8,16,22,0.89) 100%);
       -webkit-backdrop-filter: blur(2.8px);
       backdrop-filter: blur(2.8px);
       z-index: 2;
@@ -101,7 +102,7 @@
       text-align: center;
       color: #fff;
       padding: 2vw 4vw;
-      filter: drop-shadow(0 8px 32px rgba(10,10,32,0.13));
+      filter: drop-shadow(0 8px 32px rgba(0,24,32,0.16));
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -115,7 +116,7 @@
       font-family: 'JetBrains Mono', 'Inter', monospace;
       text-shadow: 0 2px 24px rgba(0,32,90,0.14);
       line-height: 1.1;
-      background: linear-gradient(90deg, #fff 65%, #a5f0e7 100%);
+      background: linear-gradient(90deg, #fff 65%, #04d9ff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -123,7 +124,7 @@
     .hero-content .tagline {
       font-size: 1.27em;
       font-weight: 600;
-      color: #73ffed;
+      color: #26ffe6;
       margin-bottom: 0.45em;
       letter-spacing: 0.14em;
       text-shadow: 0 2px 18px rgba(0,64,128,0.19);
@@ -132,16 +133,16 @@
       font-size: 1.22em;
       font-weight: 500;
       margin-bottom: 0.25em;
-      color: #e2f8ff;
+      color: #b6eafe;
       text-shadow: 0 2px 16px rgba(0,32,90,0.16);
     }
     .scroll-down {
       margin-top: 1.5em;
-      color: #fff;
+      color: #26ffe6;
       font-size: 2.3em;
       opacity: 0.77;
       animation: bounce 1.5s infinite alternate;
-      filter: drop-shadow(0 4px 14px rgba(0,0,0,0.2));
+      filter: drop-shadow(0 4px 14px rgba(0,0,0,0.18));
       cursor: pointer;
       transition: opacity .18s;
     }
@@ -156,7 +157,7 @@
       margin-top: -60px;
       background: var(--background);
       border-radius: var(--radius) var(--radius) 0 0;
-      box-shadow: 0 -4px 36px 0 rgba(20,30,60,0.07);
+      box-shadow: 0 -4px 36px 0 rgba(0,22,40,0.07);
       min-height: 60vh;
       padding-bottom: 0;
     }
@@ -178,7 +179,7 @@
       transition: box-shadow .22s;
     }
     .glassbox:hover {
-      box-shadow: 0 12px 44px 0 rgba(32,56,140,0.15);
+      box-shadow: 0 12px 44px 0 rgba(0,244,255,0.11);
     }
     section h2 {
       font-size: 2.1em;
@@ -201,9 +202,9 @@
       width: 180px;
       max-width: 36vw;
       border-radius: 13px;
-      box-shadow: 0 4px 24px 0 rgba(32,56,140,0.13);
+      box-shadow: 0 4px 24px 0 rgba(0, 210, 255, 0.13);
       border: 1.5px solid var(--border);
-      background: #eaf4ff;
+      background: #181d23;
       margin-bottom: 0;
       object-fit: cover;
     }
@@ -213,7 +214,7 @@
       max-width: 600px;
       font-size: 1.14em;
       line-height: 1.7em;
-      color: #293147;
+      color: #e2e8f0;
     }
 
     /* 반응형! */
@@ -235,9 +236,9 @@
       width: 320px;
       max-width: 45vw;
       border-radius: 13px;
-      box-shadow: 0 4px 24px 0 rgba(32,56,140,0.13);
+      box-shadow: 0 4px 24px 0 rgba(0, 210, 255, 0.13);
       border: 1.5px solid var(--border);
-      background: #eaf4ff;
+      background: #181d23;
       object-fit: cover;
       margin-bottom: 0;
     }
@@ -248,7 +249,7 @@
       max-width: 600px;
       font-size: 1.14em;
       line-height: 1.7em;
-      color: #293147;
+      color: #e2e8f0;
     }
     @media (max-width: 900px) {
       .hero-content h1 { font-size: 2.2em; }
@@ -274,7 +275,7 @@
       margin-bottom: 7px;
       line-height: 1.5em;
       font-weight: 500;
-      color: #234;
+      color: #16ffe2;
       list-style-type: '→ ';
       padding-left: 0.3em;
     }
@@ -283,7 +284,7 @@
       border-radius: 13px;
       margin-top: 22px;
       border: 1.5px solid var(--border);
-      box-shadow: 0 4px 18px 0 rgba(32,56,140,0.09);
+      box-shadow: 0 4px 18px 0 rgba(0, 220, 255, 0.10);
     }
     .publications-list {
       padding-left: 1.6em;
@@ -294,13 +295,13 @@
       line-height: 1.35em;
     }
     .publications-list a {
-      color: var(--primary);
+      color: var(--secondary);
       text-decoration: underline;
       transition: color .15s;
     }
     .publications-list a:hover,
     .publications-list a:focus {
-      color: var(--secondary);
+      color: var(--primary);
       text-decoration: underline wavy;
     }
     .contact-flex {
@@ -326,11 +327,11 @@
       border: 1.5px solid var(--border);
       object-fit: cover;
       margin-left: 0.2em;
-      background: #fff;
+      background: #181d23;
       vertical-align: middle;
     }
     .contact-link {
-      color: var(--primary);
+      color: var(--secondary);
       font-weight: 500;
       text-decoration: underline;
       word-break: break-all;
@@ -338,14 +339,14 @@
     }
     .contact-link:hover,
     .contact-link:focus {
-      color: var(--secondary);
+      color: var(--primary);
     }
     footer {
-      background: linear-gradient(90deg, #e9f5fe 0%, #f8fafc 100%);
+      background: linear-gradient(90deg, #181d23 0%, #13181e 100%);
       text-align: center;
       padding: 40px 15px 32px 15px;
       font-size: 1em;
-      color: #7b8594;
+      color: #8395b8;
       border-top: 1.5px solid var(--border);
       margin-top: 32px;
       letter-spacing: 0.04em;
@@ -369,10 +370,10 @@
     </div>
   </header>
   <main id="main">
-        <!-- Vision & Mission Section -->
+    <!-- Vision & Mission Section -->
     <section class="glassbox" data-aos="fade-up">
       <h2 style="margin-bottom:0.5em;">Vision & Mission</h2>
-      <div style="font-size:1.18em; line-height:1.7em; color:#294;">
+      <div style="font-size:1.18em; line-height:1.7em; color:#16ffe2;">
         <strong>Vision:</strong> We explore how resonance—not matter—shapes memory, life, and evolution.<br>
         <strong>Mission:</strong> Our mission is to develop alternative frameworks for understanding Earth, life, and time through interdisciplinary plasma-based research.
       </div>
@@ -382,7 +383,9 @@
         <img src="images/profile.jpg" alt="Doha Lee portrait"/>
         <div>
           <h2>About</h2>
-         Doha Lee is an independent interdisciplinary theorist exploring geocentric plasma dynamics and bioelectromagnetic resonance across biological, atmospheric, and sensory systems. Their research focuses on memory, temporal rhythms, sensory perception, and the energetic architecture of evolution and life.
+          Doha Lee is an independent interdisciplinary theorist exploring geocentric plasma dynamics and bioelectromagnetic resonance across biological, atmospheric, and sensory systems. Their research focuses on memory, temporal rhythms, sensory perception, and the energetic architecture of evolution and life.
+        </div>
+      </div>
     </section>
     <!-- Research Focus: 텍스트 왼쪽, 이미지 오른쪽, 크게 -->
     <section class="glassbox" data-aos="fade-up">
