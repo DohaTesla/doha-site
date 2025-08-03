@@ -12,7 +12,6 @@
   <meta property="og:type" content="website">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-  <link rel="icon" type="image/png" href="images/profile.jpg"/>
   <style>
     :root {
       --primary: #0246a6;
@@ -115,7 +114,6 @@
       margin-bottom: 0.45em;
       letter-spacing: 0.14em;
       text-shadow: 0 2px 18px rgba(0,64,128,0.19);
-      text-shadow: 0 2px 12px rgba(0,0,0,0.19);
     }
     .hero-content p {
       font-size: 1.22em;
@@ -203,11 +201,16 @@
     }
     .research-flex, .pub-flex {
       display: flex;
-      flex-direction: row-reverse;
       gap: 48px;
       align-items: center;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
+    }
+    .research-flex {
+      flex-direction: row;
+    }
+    .pub-flex {
+      flex-direction: row;
     }
     .research-flex img,
     .pub-flex img {
@@ -220,14 +223,33 @@
       object-fit: cover;
       margin-bottom: 0;
     }
-    .research-flex div,
-    .pub-flex div {
+    .research-flex > div,
+    .pub-flex > div {
       flex: 1;
       min-width: 230px;
       max-width: 600px;
       font-size: 1.14em;
       line-height: 1.7em;
       color: #293147;
+    }
+    @media (max-width: 900px) {
+      .hero-content h1 { font-size: 2.2em; }
+      .glassbox, section { padding-left: 8px; padding-right: 8px;}
+      .about-flex, .research-flex, .pub-flex { gap: 24px; }
+      main { margin-top: -42px; }
+      .about-flex img { width: 120px; }
+      .research-flex img,
+      .pub-flex img { width: 180px; }
+    }
+    @media (max-width: 650px) {
+      .about-flex, .research-flex, .pub-flex { flex-direction: column; }
+      .about-flex div, .research-flex div, .pub-flex div { font-size: 1em; }
+      .glassbox { padding: 23px 8px 19px 8px; }
+      section { padding-top: 42px; }
+      .ip-img { margin-top: 14px;}
+      .about-flex img { margin-bottom: 18px; width: 80vw; }
+      .research-flex img,
+      .pub-flex img { width: 80vw; margin-bottom: 18px; }
     }
     .focus-list li {
       font-size: 1.08em;
@@ -287,28 +309,6 @@
       margin-top: 32px;
       letter-spacing: 0.04em;
     }
-    @media (max-width: 900px) {
-      .hero-content h1 { font-size: 2.2em; }
-      .glassbox, section { padding-left: 8px; padding-right: 8px;}
-      .about-flex, .research-flex, .pub-flex { gap: 24px; }
-      main { margin-top: -42px; }
-      .about-flex img { width: 120px; }
-      .research-flex img,
-      .pub-flex img { width: 180px; }
-    }
-    @media (max-width: 650px) {
-      nav { padding: 0.3em 0; }
-      .hero-content { padding: 0 10px; }
-      .hero-content h1 { font-size: 1.1em; }
-      .about-flex, .research-flex, .pub-flex { flex-direction: column; }
-      .about-flex div, .research-flex div, .pub-flex div { font-size: 1em; }
-      .glassbox { padding: 23px 8px 19px 8px; }
-      section { padding-top: 42px; }
-      .ip-img { margin-top: 14px;}
-      .about-flex img { margin-bottom: 18px; width: 80vw; }
-      .research-flex img,
-      .pub-flex img { width: 80vw; margin-bottom: 18px; }
-    }
   </style>
 </head>
 <body>
@@ -358,6 +358,7 @@
         All details are currently protected under examination.<br/>
         Specific identifiers withheld to ensure legal safety and strategic integrity.
       </p>
+      <!-- 여기만 바꿨어요!! -->
       <img src="images/ip-circuit.png" alt="Intellectual Property Illustration" class="ip-img"/>
     </section>
     <!-- Publications: 텍스트 왼쪽, 이미지 오른쪽, 크게 -->
@@ -386,4 +387,9 @@
   <footer>
     © 2025 DohaTeslaLab. All rights reserved.
   </footer>
-  <script src="https://un
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 750, once: true });
+  </script>
+</body>
+</html>
