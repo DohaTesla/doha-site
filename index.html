@@ -10,6 +10,7 @@
   <meta property="og:image" content="https://bespoke-meerkat-51df1a.netlify.app/images/hero.jpg">
   <meta property="og:url" content="https://bespoke-meerkat-51df1a.netlify.app/">
   <meta property="og:type" content="website">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpg"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
   <style>
@@ -54,6 +55,18 @@
       text-decoration: none;
       transition: color .18s;
       font-family: 'JetBrains Mono', 'Inter', monospace;
+      display: flex;
+      align-items: center;
+      gap: 0.6em;
+    }
+    nav .logo img {
+      height: 1.7em;
+      width: 1.7em;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: #fff;
+      object-fit: cover;
+      margin-left: 0.2em;
     }
     nav .logo:hover, nav .logo:focus { color: var(--secondary); }
     header {
@@ -173,6 +186,9 @@
       color: var(--primary);
       margin-bottom: 0.3em;
       letter-spacing: 0.03em;
+      display: flex;
+      align-items: center;
+      gap: 0.65em;
     }
     .about-flex {
       display: flex;
@@ -234,7 +250,6 @@
       line-height: 1.7em;
       color: #293147;
     }
-
     @media (max-width: 900px) {
       .hero-content h1 { font-size: 2.2em; }
       .glassbox, section { padding-left: 8px; padding-right: 8px;}
@@ -254,7 +269,6 @@
       .research-flex img,
       .pub-flex img { width: 80vw; margin-bottom: 18px; }
     }
-
     .focus-list li {
       font-size: 1.08em;
       margin-bottom: 7px;
@@ -289,6 +303,32 @@
       color: var(--secondary);
       text-decoration: underline wavy;
     }
+    .contact-flex {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .contact-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.34em;
+      font-weight: 700;
+      color: var(--primary);
+      font-family: 'JetBrains Mono', 'Inter', monospace;
+    }
+    .contact-logo img {
+      height: 2.1em;
+      width: 2.1em;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      object-fit: cover;
+      margin-left: 0.2em;
+      background: #fff;
+      vertical-align: middle;
+    }
     .contact-link {
       color: var(--primary);
       font-weight: 500;
@@ -314,7 +354,9 @@
 </head>
 <body>
   <nav>
-    <a href="#" class="logo">DohaTeslaLab</a>
+    <a href="#" class="logo">DohaTeslaLab
+      <img src="images/logo.jpg" alt="Lab logo" />
+    </a>
   </nav>
   <header>
     <div class="hero-overlay">
@@ -379,7 +421,12 @@
       </div>
     </section>
     <section class="glassbox contact" data-aos="fade-up">
-      <h2>Contact</h2>
+      <div class="contact-flex">
+        <div class="contact-logo">
+          DohaTeslaLab
+          <img src="images/logo.jpg" alt="Lab logo" />
+        </div>
+      </div>
       <p>Email: <a class="contact-link" href="mailto:dohaplanet1@gmail.com">dohaplanet1@gmail.com</a></p>
       <p>ORCID: <a class="contact-link" href="https://orcid.org/0009-0002-2846-2867" target="_blank">https://orcid.org/0009-0002-2846-2867</a></p>
     </section>
