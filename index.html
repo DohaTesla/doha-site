@@ -267,6 +267,24 @@
       .research-flex img,
       .pub-flex img { width: 80vw; margin-bottom: 18px; }
     }
+    @media (max-width: 900px) {
+  .pub-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pub-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px; /* 이미지 간격 */
+  }
+
+  .pub-images img {
+    width: 85vw;   /* 모바일 화면에 꽉 차도록 */
+    max-width: 480px; /* 너무 커지지 않게 */
+    margin-bottom: 12px;
+  }
     .focus-list li {
       font-size: 1.08em;
       margin-bottom: 7px;
