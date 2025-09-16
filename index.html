@@ -218,7 +218,6 @@
       color: #e2e8f0;
     }
 
-    /* 반응형! */
     .research-flex, .pub-flex {
       display: flex;
       gap: 48px;
@@ -348,33 +347,27 @@
       margin-top: 32px;
       letter-spacing: 0.04em;
     }
-/* === Publications: 모바일/태블릿에서 세로로 쌓이게 강제 === */
 @media (max-width: 900px) {
-  /* 텍스트 박스와 이미지 박스를 세로로 */
   .pub-flex { 
     flex-direction: column;
     align-items: center;
     gap: 24px;
   }
-
-  /* 이미지 컨테이너 자체를 1열로 고정 */
   .publications .pub-images {
     display: grid;
-    grid-template-columns: 1fr; /* 한 줄에 하나 */
+    grid-template-columns: 1fr;
     width: 100%;
     justify-items: center;
     row-gap: 18px;
   }
 
-  /* 각 이미지가 컨테이너 폭을 꽉 채우도록 */
   .publications .pub-images img {
-    width: 90vw;        /* 화면 폭 기준 */
-    max-width: 600px;   /* 너무 커지지 않게 상한선 */
+    width: 90vw;       
+    max-width: 600px;  
     height: auto;
     margin: 0;
   }
 
-  /* DOI 링크 줄바꿈 (모바일에서 넘치지 않게) */
   .publications-list a { 
     word-break: break-all; 
   }
@@ -416,7 +409,6 @@
       </div>
     </section>
 
-    <!-- Research Focus: 텍스트 왼쪽, 이미지 오른쪽, 크게 -->
     <section class="glassbox" data-aos="fade-up">
       <div class="research-flex">
         <div>
@@ -443,11 +435,9 @@
       <img src="images/background.jpg" alt="Tech background" class="ip-img"/>
     </section>
 
- <!-- Publications: 텍스트 왼쪽, 이미지 오른쪽, 크게 -->
 <section class="glassbox publications">
   <div class="pub-flex">
     
-    <!-- 왼쪽 텍스트 -->
     <div data-aos="fade-right" data-aos-duration="800">
       <h2>Publications</h2>
       <ul class="publications-list">
@@ -474,7 +464,6 @@
       </ul>
     </div>
 
-    <!-- 오른쪽 이미지 -->
     <div class="pub-images" data-aos="fade-left" data-aos-duration="800">
       <img src="images/publications1.PNG" alt="Publications1 Image" style="margin-bottom: 10px;">
       <img src="images/publications2.PNG" alt="Publications2 Image">
